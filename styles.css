@@ -1,139 +1,162 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #121214;
+  background-color: #1f2151;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #8234e9;
+  background-color: #2f3279;
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background-color: #121214;
+
+  background-image: url("./img/bg.png");
+  background-size: contain;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 
-  font-family: "Roboto", sans-serif;
+  gap: 3.12rem;
 
-  padding: 32px;
+  color: #f1f2f6;
 }
 
-h1,
-h2 {
-  color: #fff;
-  margin: 32px 0;
+main {
+  width: 480px;
+  border-radius: 1.5rem;
+
+  border: 1px solid #2f3279;
+  overflow-y: hidden;
 }
 
 form {
-  min-width: 510px;
+  background-color: #141534;
+
   display: flex;
-  gap: 12px;
+  flex-direction: column;
+
+  padding: 3.5rem 4rem;
 }
 
-input {
-  flex: 1;
-  height: 56px;
-  border-radius: 5px;
-  border: 2px solid #202024;
-  background-color: #202024;
-  padding: 16px;
-  color: #fff;
-  font-size: 16px;
-
-  font-family: "Roboto", sans-serif;
+label {
+  font-size: 0.75rem;
+  color: #b2b8de;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  margin-top: 1.25rem;
 }
 
-input:focus {
+input,
+select {
   outline: 0;
-  border-color: #8234e9;
+
+  color: #f1f2f6;
+  border: 1px solid #1f2151;
+  border-radius: 0.5rem;
+
+  background-color: #0e0f25;
+  padding: 1.25rem 1rem;
+
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
 }
 
-input:disabled {
-  opacity: 0.5;
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  background: url("./img/chevron-down.svg") no-repeat;
+  background-position: calc(100% - 0.75rem) center !important;
+  background-color: #0e0f25;
+
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+input::placeholder,
+select:invalid,
+option {
+  color: #b2b8de;
+}
+
+input:focus,
+select:focus {
+  border: 1px solid #4a5dcd;
 }
 
 button {
-  cursor: pointer;
-}
+  height: 3.25rem;
 
-.button {
-  height: 56px;
-  background-color: #8257e5;
-  border-radius: 5px;
+  background-color: #2f34ab;
+
   border: none;
-  color: #fff;
-  font-size: 14px;
-  font-weight: bold;
+  border-radius: 0.5rem;
 
-  padding: 0 16px;
+  color: #f1f2f6;
+
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
   transition: background-color 0.2s;
 
-  font-family: "Roboto", sans-serif;
+  margin-top: 3rem;
+  outline: 0;
 }
 
-.button:hover {
-  background-color: #633bbc;
+button:hover {
+  background-color: #4a5dcd;
 }
 
-ul {
-  list-style-type: none;
-  margin-top: 42px;
+button:focus {
+  outline: 1.5px solid #4a5dcd;
+}
+
+footer {
+  background-color: #1f2151;
+  padding: 2.5rem;
+  max-height: 196px;
+
+  text-align: center;
+  display: none;
 
   overflow-y: scroll;
-  max-height: 250px;
 }
 
-.guest {
-  color: #fff;
-  font-size: 16px;
-  background-color: #202024;
-
-  margin-bottom: 16px;
-  padding: 22px 16px;
-  border-radius: 5px;
-
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-
-  display: flex;
-  justify-content: space-between;
+.show-result {
+  display: block;
 }
 
-.button-icon {
-  background: none;
-  border: none;
-  color: #555;
-
-  transition: color 0.2s;
+footer span {
+  color: #7d8dec;
+  font-size: 1rem;
+  font-family: "IBM Plex Mono", monospace;
+  margin-bottom: 0.5rem;
+  line-height: 1.25rem;
 }
 
-.button-icon:hover {
-  color: #999;
-}
-
-@media (max-width: 420px) {
-  form {
-    flex-direction: column;
-    min-width: 0;
-  }
-}
-
-.input-error,
-.input-error:focus {
-  border-color: #e21a43;
+footer h1 {
+  color: #f1f2f6;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 3rem;
+  word-break: break-all;
 }
